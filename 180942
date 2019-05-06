@@ -1,0 +1,145 @@
+#pragma once
+#include <iostream>
+
+using namespace std;
+
+template <typename T1>
+T1 GetMax(T1 a, T1 b) ////for Exercise 1a
+{
+	if(a>b)
+		return a;
+	else
+		return b;
+}
+
+template <typename T2>
+T2 GetMin(T2 a, T2 b)  ////for Exercise 1a
+{
+	if(a<b)
+		return a;
+	else 
+		return b;
+}
+
+template <typename T3,typename T4>
+T3 GetMax(T3 a, T4 b)   ////for Exercise 1d
+{
+	if(a>b)
+		return a;
+	else
+		return b;
+}
+
+template <typename T5,typename T6>
+T5 GetMin(T5 a, T6 b)    ////for Exercise 1d
+{
+	if(a<b)
+		return a;
+	else 
+		return b;
+}
+
+template <typename T7>
+class Pair
+{
+private:
+	T7 values[2];
+
+public:
+	Pair::Pair(T7 a,T7 b)
+	{
+		values[0]=a;
+		values[1]=b;
+	}
+
+	T7 Pair::GetMax()
+	{
+		if (values[0]>values[1])
+			return values[0];
+		else
+			return values[1];
+	}
+
+	T7 Pair::GetMin();
+
+	friend ostream& operator<<(ostream&, const Pair&);
+};
+
+template <typename T8>
+T8 Pair<T8>::GetMin()
+{
+	if (values[0]<values[1])
+		return values[0];
+	else
+		return values[1];
+}
+
+template <typename T9>
+ostream& operator<<(ostream &out, const Pair<T9> &a)
+{
+	out<<a.values[0]<<","<<a.values[1]<<endl;
+	return out;
+}
+
+
+
+int main () 
+{
+
+	//////Exercise 1b////
+	// int i=5, j=6, k;
+	// long l=10, m=5, n;
+	// k=GetMax<int>(i,j);
+	// n=GetMin<long>(l,m);
+	// cout << k << endl;
+	// cout << n << endl;
+
+
+	//////Exercise 1c///
+	//int i=5, j=6, k;
+	//long l=10, m=5, n;
+	//k=GetMax(i,j);
+	//n=GetMin(l,m);
+	//cout << k << endl;
+	//cout << n << endl;
+
+	//////Exercise 1d////
+	//char i='Z';
+	//int  j=6, k;
+	//long l=10, m=5, n;
+	//k=GetMax<int,long>(i,m);
+	//n=GetMin<int,char>(j,l);
+	//cout << k << endl;
+	//cout << n << endl;
+
+	////Exercise 1e////
+	char i='Z';
+	int  j=6, k;
+	long l=10, m=5, n;
+	k=GetMax(i,m);
+	n=GetMin(j,l);
+	cout << k << endl;
+	cout << n << endl;
+
+	/* ///Exercise 2///
+	Pair <double> myobject (1.012, 1.01234);
+	cout<<myobject.GetMax()<<endl;
+	cout<<myobject.GetMin()<<endl;
+	cout<<myobject<<endl; */
+
+
+
+
+
+
+
+	return 0;
+}
+
+
+
+
+
+
+
+
